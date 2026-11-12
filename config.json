@@ -1,0 +1,34 @@
+{
+  "site_name": "Bit a Bit",
+  "tagline": "Tecnología e IA explicadas sin complicaciones",
+  "description": "Guías prácticas y claras sobre móviles, ordenadores, inteligencia artificial, seguridad y apps. Resolvemos los problemas tecnológicos del día a día.",
+  "base_url": "https://ccolome100-bit.github.io",
+  "language": "es",
+  "author": "Equipo Bit a Bit",
+  "contact_email": "hola@TU-DOMINIO.com",
+  "owner_legal_name": "TU NOMBRE O EMPRESA",
+
+  "adsense": {
+    "client_id": "",
+    "auto_ads": true,
+    "slot_top": "",
+    "slot_in_article": "",
+    "slot_sidebar": "",
+    "slot_bottom": "",
+    "show_placeholders_when_empty": true
+  },
+
+  "amazon_affiliate_tag": "",
+  "google_analytics_id": "",
+  "search_console_verification": "",
+
+  "categories": {
+    "ia": {"name": "Inteligencia Artificial", "emoji": "🤖", "color": "#7c3aed"},
+    "movil": {"name": "Móvil", "emoji": "📱", "color": "#0ea5e9"},
+    "ordenador": {"name": "Ordenador", "emoji": "💻", "color": "#10b981"},
+    "seguridad": {"name": "Seguridad", "emoji": "🔒", "color": "#ef4444"},
+    "apps": {"name": "Apps y Trucos", "emoji": "⚡", "color": "#f59e0b"}
+  },
+
+  "posts_per_page": 12
+}
