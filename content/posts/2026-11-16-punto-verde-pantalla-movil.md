@@ -72,6 +72,10 @@ Android también tiene **interruptores rápidos** en el panel de ajustes para bl
 
 Muchas apps piden permisos al instalarlas que luego no necesitan. Dedica cinco minutos cada pocos meses a revisar quién puede usar tu cámara, tu micrófono y tu ubicación. En iPhone, el **Informe de privacidad de apps** (Ajustes › Privacidad y seguridad) muestra cuándo las apps han accedido a estos datos.
 
+## Productos que te pueden ayudar
+
+- **Tapa deslizante para la cámara del portátil:** una pegatina fina que tapa la webcam cuando no la usas y se abre con el dedo. Es barata y da tranquilidad, aunque recuerda que el micrófono también importa. [[amazon:tapa webcam deslizante portatil|Ver tapas para webcam en Amazon]]
+
 ## Error común que debes evitar
 
 Tapar la cámara con cinta y olvidarse del micrófono. Si de verdad te preocupa la privacidad, el micrófono es igual de importante. Lo más eficaz es controlar los permisos de cada app, no solo tapar la lente.
