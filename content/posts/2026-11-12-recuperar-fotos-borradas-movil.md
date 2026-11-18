@@ -81,6 +81,11 @@ Activa hoy mismo la **copia de seguridad automática** de fotos:
 
 Así, aunque pierdas o rompas el móvil, tus fotos estarán a salvo.
 
+## Productos que te pueden ayudar
+
+- **Lector de tarjetas microSD USB:** imprescindible si vas a intentar recuperar fotos de una tarjeta desde el ordenador. Los hay con conector USB-C y USB normal. [[amazon:lector tarjetas microsd usb c|Ver lectores de tarjetas en Amazon]]
+- **Disco duro externo:** la forma más sencilla de tener una segunda copia de tus fotos, además de la nube, para que no vuelva a pasar. [[amazon:disco duro externo 1tb|Ver discos externos en Amazon]]
+
 ## Error común que debes evitar
 
 Seguir usando el móvil o la tarjeta con normalidad después de borrar algo importante de una microSD. Cada foto nueva puede sobrescribir el espacio donde estaba la borrada. Si es una tarjeta, sácala y no la uses hasta intentar recuperarla.
