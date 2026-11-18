@@ -181,7 +181,7 @@ def footer():
       <li><a href="/aviso-legal/">Aviso legal</a></li>
       <li><a href="/feed.xml">RSS</a></li></ul></div>
   </div>
-  <div class="wrap copy">© {YEAR} {esc(CFG['site_name'])}. Algunos enlaces pueden ser de afiliado: si compras a través de ellos recibimos una pequeña comisión sin coste para ti.</div>
+  <div class="wrap copy">© {YEAR} {esc(CFG['site_name'])}. Algunos enlaces pueden ser de afiliado: si compras a través de ellos recibimos una pequeña comisión sin coste para ti. En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</div>
 </footer>
 <script src="/app.js" defer></script>
 </body></html>"""
@@ -338,7 +338,7 @@ def build_legal():
 <p>Este sitio utiliza Google AdSense. Los proveedores externos, incluido Google, utilizan cookies para mostrar anuncios basados en las visitas anteriores del usuario a este u otros sitios web. Las cookies de publicidad permiten a Google y a sus socios mostrar anuncios basados en las visitas a este sitio y/o a otros sitios de Internet.</p>
 <p>Puedes inhabilitar la publicidad personalizada en <a href="https://adssettings.google.com" rel="noopener" target="_blank">Configuración de anuncios de Google</a> o en <a href="https://www.aboutads.info" rel="noopener" target="_blank">www.aboutads.info</a>. Más información sobre cómo usa Google los datos: <a href="https://policies.google.com/technologies/partner-sites" rel="noopener" target="_blank">policies.google.com/technologies/partner-sites</a>.</p>
 <p>A los visitantes del Espacio Económico Europeo, Reino Unido y Suiza se les solicita su consentimiento mediante una plataforma de gestión del consentimiento certificada por Google antes de usar cookies publicitarias.</p>
-<h2>Afiliados</h2><p>Participamos en programas de afiliados (por ejemplo, Amazon). Si compras a través de nuestros enlaces podemos recibir una comisión, sin coste adicional para ti.</p>
+<h2>Afiliados</h2><p>Participamos en programas de afiliados (por ejemplo, Amazon). Si compras a través de nuestros enlaces podemos recibir una comisión, sin coste adicional para ti. En calidad de Afiliado de Amazon, obtengo ingresos por las compras adscritas que cumplen los requisitos aplicables.</p>
 <h2>Base legal y derechos</h2><p>Tratamos los datos con tu consentimiento o por interés legítimo. Puedes ejercer tus derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiendo a {mail}, y reclamar ante la autoridad de protección de datos competente.</p>""")
     static_page("politica-de-cookies", "Política de cookies", f"""
 <p>Una cookie es un pequeño archivo que el sitio guarda en tu navegador.</p>
