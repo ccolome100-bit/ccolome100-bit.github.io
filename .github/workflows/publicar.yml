@@ -4,11 +4,11 @@ on:
   workflow_dispatch:          # botón "Run workflow" para lanzarlo a mano
     inputs:
       generar:
-        description: "¿Generar artículo nuevo? (false = solo reconstruir)"
-        default: "true"
+        description: "¿Generar artículo nuevo con la API de Claude? (necesita ANTHROPIC_API_KEY con saldo)"
+        default: "false"
   push:
     branches: [main]
-    paths: ["content/**", "static/**", "config.json", "scripts/build.py"]
+    paths: ["content/**", "static/**", "config.json", "scripts/**", "requirements.txt"]
 
 permissions:
   contents: write
@@ -32,7 +32,7 @@ jobs:
       - run: pip install -r requirements.txt
 
       - name: Escribir artículo con Claude
-        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.generar == 'true')
+        if: github.event_name == 'workflow_dispatch' && inputs.generar == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           AUTO_PUBLISH: ${{ vars.AUTO_PUBLISH || 'true' }}
@@ -41,7 +41,7 @@ jobs:
         run: python scripts/generate_post.py
 
       - name: Guardar artículo en el repositorio
-        if: github.event_name != 'push'
+        if: github.event_name == 'workflow_dispatch' && inputs.generar == 'true'
         run: |
           git config user.name "bitabit-bot"
           git config user.email "bot@users.noreply.github.com"
@@ -51,6 +51,9 @@ jobs:
 
       - name: Construir sitio
         run: python scripts/build.py
+
+      - name: Generar imágenes para compartir
+        run: python scripts/og.py
 
       - uses: actions/upload-pages-artifact@v3
         with:
