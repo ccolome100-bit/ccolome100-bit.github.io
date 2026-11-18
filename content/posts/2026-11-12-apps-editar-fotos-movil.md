@@ -85,6 +85,11 @@ Para que tus fotos queden naturales, edita siempre en este orden:
 4. **Retoca detalles:** manchas, objetos, nitidez.
 5. **Aplica un filtro**, si quieres, al final y con poca intensidad.
 
+## Productos que te pueden ayudar
+
+- **Aro de luz o luz LED pequeña:** la mejor edición empieza con una buena foto. Con buena luz necesitarás retocar mucho menos, sobre todo en retratos, fotos de productos y vídeos. [[amazon:aro de luz movil con tripode|Ver aros de luz en Amazon]]
+- **Trípode o palo selfie con mando:** para fotos nítidas, de grupo o de producto sin que tiemble la imagen. [[amazon:tripode movil palo selfie mando bluetooth|Ver trípodes para móvil en Amazon]]
+
 ## Error común que debes evitar
 
 Pasarse con la saturación y la nitidez. Una foto con colores chillones y bordes demasiado marcados se nota editada a kilómetros. Una buena regla: cuando creas que has terminado, baja la intensidad del último ajuste a la mitad.
