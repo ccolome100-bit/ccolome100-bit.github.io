@@ -68,6 +68,10 @@ El SMS es más vulnerable porque existen estafas de duplicado de SIM y de mensaj
 
 Tu correo electrónico es la llave para recuperar todas las demás cuentas. Si alguien entra en él, puede restablecer las contraseñas de tu Instagram, Facebook y más. Activa la verificación en dos pasos en **Gmail** (myaccount.google.com › Seguridad) o en **Outlook** (account.microsoft.com › Seguridad) antes que en ninguna otra app.
 
+## Productos que te pueden ayudar
+
+- **Llave de seguridad física (FIDO2):** para tus cuentas más importantes (Google, Microsoft, Apple, Facebook e Instagram en algunos casos) puedes usar una llave USB o NFC como segundo factor. Es todavía más segura que los códigos, porque no se puede «reenviar» por error. [[amazon:llave de seguridad fido2 usb c nfc|Ver llaves de seguridad en Amazon]]
+
 ## Error común que debes evitar
 
 Compartir un código de verificación con alguien que te lo pide «por error», aunque parezca un amigo. Es la estafa más habitual para robar cuentas de WhatsApp e Instagram: el estafador ya ha robado la cuenta de tu amigo y la usa para engañarte. **Nunca compartas un código que te llegue por SMS o WhatsApp.**
