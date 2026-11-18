@@ -65,6 +65,10 @@ Son más cómodas y prácticamente inmunes al phishing, porque no hay ninguna cl
 
 Si aparece alguna filtrada, cámbiala de inmediato en esa web y en cualquier otra donde la hayas reutilizado.
 
+## Productos que te pueden ayudar
+
+- **Llave de seguridad física (FIDO2):** una pequeña llave USB o NFC que sirve como segundo factor o como llave de acceso en Google, Microsoft, Apple y muchas otras webs. Es la protección más fuerte contra el robo de cuentas. [[amazon:llave de seguridad fido2 usb c nfc|Ver llaves de seguridad en Amazon]]
+
 ## Error común que debes evitar
 
 Guardar las contraseñas en una nota del móvil, en un Excel o en un papel pegado al monitor. Si alguien accede a tu móvil o a tu ordenador, lo tiene todo. Un gestor de contraseñas cifra la información y es mucho más seguro.
