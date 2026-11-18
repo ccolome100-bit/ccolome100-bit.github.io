@@ -62,6 +62,11 @@ Estas funciones solo sirven si están activadas **antes** de perder el móvil:
 
 Añade en la pantalla de bloqueo un **contacto de emergencia** o un mensaje del tipo «Si encuentras este móvil, llama al…». En iPhone puedes configurar la **Ficha médica** con contactos de emergencia visibles sin desbloquear. Muchas personas devuelven los móviles encontrados si saben a quién llamar.
 
+## Productos que te pueden ayudar
+
+- **Localizador Bluetooth (tipo AirTag o SmartTag):** ideal para las llaves, la cartera, la mochila o la maleta. Se encuentran desde el móvil igual que el teléfono. Elige uno compatible con tu sistema: AirTag para iPhone, o localizadores compatibles con la red de Google para Android. [[amazon:localizador bluetooth llaves|Ver localizadores en Amazon]]
+- **Funda con cordón o anilla:** reduce mucho las caídas y los despistes en la calle, el transporte público o los conciertos. [[amazon:funda movil con cordon colgante|Ver fundas con cordón en Amazon]]
+
 ## Error común que debes evitar
 
 Borrar el móvil a distancia demasiado pronto. Si lo borras, en algunos casos dejarás de poder ver su ubicación. Primero hazlo sonar y bloquéalo; bórralo solo si das por perdida la posibilidad de recuperarlo.
