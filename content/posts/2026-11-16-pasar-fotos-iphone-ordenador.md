@@ -85,6 +85,11 @@ El iPhone guarda las fotos en formato **HEIC**, que ocupa menos espacio pero que
 
 Antes de eliminar las fotos del móvil para liberar espacio, abre algunas en el ordenador para comprobar que se han copiado bien. Mejor aún: guárdalas también en un disco externo o en la nube. Una sola copia nunca es suficiente.
 
+## Productos que te pueden ayudar
+
+- **Cable certificado para iPhone:** muchos fallos al conectar el iPhone al ordenador se deben a cables baratos o desgastados. Busca uno con certificación MFi (Lightning) o un USB-C de calidad, según tu modelo. [[amazon:cable iphone certificado mfi|Ver cables para iPhone en Amazon]]
+- **Memoria USB para iPhone o disco externo:** si quieres guardar las fotos fuera del móvil y del ordenador, una memoria con conector para iPhone o un disco externo te da una copia extra. [[amazon:memoria usb iphone|Ver memorias USB para iPhone en Amazon]]
+
 ## Error común que debes evitar
 
 Desconectar el cable a mitad de la importación o dejar que el iPhone se bloquee durante el proceso. Puede cortar la transferencia y dejar fotos sin copiar. Mantén el iPhone desbloqueado y no lo desconectes hasta que termine.
