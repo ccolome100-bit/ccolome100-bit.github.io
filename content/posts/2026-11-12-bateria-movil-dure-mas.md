@@ -66,6 +66,11 @@ Las baterías de litio se desgastan con el tiempo, pero puedes alargar su vida �
 
 Si el móvil se apaga solo con un 20-30 %, se calienta mucho o no llega a mediodía con un uso normal, la batería está desgastada. En iPhone, mira **Ajustes › Batería › Estado y carga**: por debajo del 80 % conviene cambiarla. En Android, algunas marcas lo indican en Ajustes › Batería o en su app de diagnóstico. Cambiar la batería en un servicio técnico suele ser mucho más barato que comprar un móvil nuevo.
 
+## Productos que te pueden ayudar
+
+- **Batería externa (power bank):** la solución más práctica si pasas muchas horas fuera de casa. Una de 10.000 mAh carga un móvil completo unas dos veces y cabe en el bolsillo. [[amazon:bateria externa 10000mah carga rapida|Ver baterías externas en Amazon]]
+- **Cable USB-C de calidad:** los cables baratos o dañados cargan más lento y se calientan. Uno certificado de una marca conocida dura años. [[amazon:cable usb c carga rapida certificado|Ver cables USB-C en Amazon]]
+
 ## Error común que debes evitar
 
 Descargar apps «limpiadoras» o «ahorradoras de batería». Suelen funcionar en segundo plano, mostrar anuncios y acabar consumiendo más energía de la que ahorran.
