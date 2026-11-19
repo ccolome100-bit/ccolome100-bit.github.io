@@ -56,8 +56,8 @@ def wrap(draw, text, fnt, max_w):
 
 def make_image(title, label, color_hex, path):
     c1 = hex_rgb(color_hex)
-    c2 = hex_rgb("#0ea5e9")
-    a, b = mix(c1, (20, 20, 43), 0.35), mix(c2, (20, 20, 43), 0.45)
+    c2 = hex_rgb("#38bdf8")
+    a, b = mix(c1, (13, 14, 26), 0.55), mix(c2, (13, 14, 26), 0.7)
     small = Image.new("RGB", (24, 13))
     for y in range(13):
         for x in range(24):
@@ -65,11 +65,18 @@ def make_image(title, label, color_hex, path):
     img = small.resize((W, H), Image.BILINEAR)
     d = ImageDraw.Draw(img)
     # tarjeta blanca
-    d.rounded_rectangle((60, 60, W - 60, H - 60), radius=36, fill=(255, 255, 255))
-    # logo
-    d.rounded_rectangle((110, 110, 170, 170), radius=14, fill=c1)
-    d.polygon([(146, 118), (124, 146), (138, 146), (132, 164), (156, 134), (142, 134)], fill=(255, 255, 255))
-    d.text((188, 140), build.CFG["site_name"], font=font(40), fill=(20, 20, 43), anchor="lm")
+    d.rounded_rectangle((60, 60, W - 60, H - 60), radius=36, fill=(245, 244, 240))
+    # logo: Bit, el extraterrestre
+    ink, lil, ice = (42, 42, 58), (185, 167, 255), (125, 211, 252)
+    d.line((141, 112, 152, 100), fill=ink, width=4)
+    d.ellipse((150, 94, 160, 104), fill=lil)
+    d.rounded_rectangle((106, 130, 112, 148), radius=3, fill=lil)
+    d.rounded_rectangle((174, 130, 180, 148), radius=3, fill=lil)
+    d.rounded_rectangle((110, 112, 176, 170), radius=28, fill=(255, 255, 255), outline=ink, width=3)
+    d.rounded_rectangle((118, 124, 168, 156), radius=16, fill=(13, 14, 26))
+    d.rounded_rectangle((127, 137, 137, 142), radius=2, fill=ice)
+    d.rounded_rectangle((149, 137, 159, 142), radius=2, fill=ice)
+    d.text((196, 141), build.CFG["site_name"], font=font(40), fill=(20, 20, 43), anchor="lm")
     # etiqueta de categoría
     lf = font(26)
     lw = d.textlength(label.upper(), font=lf)
@@ -114,7 +121,7 @@ def main():
         if f.exists():
             inject(f, f"{build.BASE}/og/{p['slug']}.png", p["title"])
     # imagen por defecto para portada, categorías y páginas legales
-    make_image(build.CFG["tagline"], "Guías prácticas", "#6d28d9", OG_DIR / "default.png")
+    make_image(build.CFG["tagline"], "Guías prácticas", "#6b5bd6", OG_DIR / "default.png")
     for f in OUT.rglob("index.html"):
         inject(f, f"{build.BASE}/og/default.png", build.CFG["site_name"])
     print(f"🖼️  Imágenes para compartir generadas: {len(posts) + 1}")
