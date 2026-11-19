@@ -137,7 +137,8 @@ def head(title, description, path, og_type="website", extra=""):
 <meta property="og:site_name" content="{esc(CFG['site_name'])}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/rss+xml" title="{esc(CFG['site_name'])}" href="/feed.xml">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<link rel="icon" type="image/svg+xml" href="/alien.svg">
+<meta name="theme-color" content="#0b0c16">
 <link rel="stylesheet" href="/style.css">
 <script>try{{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 {gsc}
@@ -148,11 +149,17 @@ def head(title, description, path, og_type="website", extra=""):
 <body>"""
 
 
+def logo_text():
+    name = esc(CFG["site_name"])
+    parts = name.split(" ", 1)
+    return f"{parts[0]}<b>{(' ' + parts[1]) if len(parts) > 1 else ''}</b>" if len(parts) > 1 else name
+
+
 def header():
     links = "".join(f'<a href="/categoria/{k}/">{v["emoji"]} {esc(v["name"])}</a>' for k, v in CATS.items())
     return f"""<header class="site-header">
   <div class="wrap nav">
-    <a class="logo" href="/"><span class="logo-mark">⚡</span>{esc(CFG['site_name'])}</a>
+    <a class="logo" href="/"><img class="logo-mark" src="/alien.svg" alt="" width="34" height="34">{logo_text()}</a>
     <nav class="cats">{links}</nav>
     <div class="nav-tools">
       <button class="icon-btn" id="searchBtn" aria-label="Buscar">🔍</button>
@@ -170,8 +177,9 @@ def footer():
     cats = "".join(f'<li><a href="/categoria/{k}/">{esc(v["name"])}</a></li>' for k, v in CATS.items())
     return f"""<footer class="site-footer">
   <div class="wrap footer-grid">
-    <div><a class="logo" href="/"><span class="logo-mark">⚡</span>{esc(CFG['site_name'])}</a>
-      <p>{esc(CFG['description'])}</p></div>
+    <div><a class="logo" href="/"><img class="logo-mark" src="/alien.svg" alt="" width="34" height="34">{logo_text()}</a>
+      <p>{esc(CFG['description'])}</p>
+      <div class="signoff"><img src="/alien.svg" alt="" width="26" height="26">Fin de la transmisión. Bit cambia y corta.</div></div>
     <div><h4>Temas</h4><ul>{cats}</ul></div>
     <div><h4>Información</h4><ul>
       <li><a href="/sobre-nosotros/">Sobre nosotros</a></li>
@@ -303,6 +311,8 @@ def build_list(posts, path, title, description, hero=None):
 def build_home(posts):
     chips = "".join(f'<a class="chip" style="--c:{v["color"]}" href="/categoria/{k}/">{v["emoji"]} {esc(v["name"])}</a>' for k, v in CATS.items())
     hero = f"""<section class="hero">
+  <div class="hero-alien"><img src="/alien.svg" alt="Bit, el extraterrestre de {esc(CFG['site_name'])}" width="120" height="120"></div>
+  <div class="kicker"><i>▸</i> Informe de campo desde la órbita · {len(posts)} guías</div>
   <h1>{esc(CFG['tagline'])}</h1>
   <p>{esc(CFG['description'])}</p>
   <div class="chips">{chips}</div>
