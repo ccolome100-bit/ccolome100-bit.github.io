@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <linearGradient id="h" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#e6e4ee"/></linearGradient>
+  </defs>
+  <path d="M62 24 L76 9" stroke="#2a2a3a" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="78" cy="7.5" r="5" fill="#b9a7ff" filter="url(#g)"/>
+  <rect x="7" y="52" width="9" height="22" rx="4.5" fill="#b9a7ff"/>
+  <rect x="104" y="52" width="9" height="22" rx="4.5" fill="#b9a7ff"/>
+  <rect x="13" y="22" width="94" height="82" rx="40" fill="url(#h)" stroke="#2a2a3a" stroke-width="3"/>
+  <rect x="23" y="38" width="74" height="47" rx="23.5" fill="#0d0e1a"/>
+  <path d="M33 50 Q40 42 52 42" stroke="#ffffff" stroke-opacity=".28" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <g filter="url(#g)" fill="#7dd3fc">
+    <rect x="37" y="58" width="15" height="7" rx="3.5"/>
+    <rect x="68" y="58" width="15" height="7" rx="3.5"/>
+  </g>
+  <path d="M54 75 Q60 78 66 75" stroke="#7dd3fc" stroke-opacity=".7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>
