@@ -1,7 +1,8 @@
 ---
-title: "Las 7 mejores apps gratis para editar fotos en el móvil"
-description: "Comparamos las mejores apps gratuitas para editar fotos en Android y iPhone: Snapseed, Lightroom, VSCO, Canva, Picsart y más, con sus puntos fuertes y límites."
+title: "Las mejores apps para editar fotos gratis en el móvil (Android y iPhone)"
+description: "Las mejores aplicaciones gratis para editar fotos en Android y iPhone: Snapseed, Lightroom, VSCO, Canva, Picsart y más. Cuál elegir para retocar, recortar o mejorar tus fotos."
 date: 2026-11-12
+updated: 2026-11-24
 category: apps
 emoji: 🎨
 tags: fotografía, apps gratis, edición de fotos, android, iphone
@@ -104,6 +105,12 @@ Sí. Prueba el Borrador mágico de Google Fotos (si tu móvil lo incluye), la he
 
 ### ¿Editar fotos reduce su calidad?
 No si guardas una copia con la máxima calidad. La mayoría de apps permiten elegir la calidad al exportar; elige siempre la más alta.
+
+### ¿Cuál es la mejor app para recortar fotos?
+No necesitas ninguna: el editor de la galería de tu móvil (Fotos en iPhone, Google Fotos o la Galería en Android) recorta y endereza fotos en dos toques. Si quieres recortar con formatos para redes sociales, Snapseed y Canva lo hacen muy bien.
+
+### ¿Y un programa para editar fotos gratis en el ordenador?
+Sí, hay opciones muy completas y gratuitas como Photopea, GIMP o Canva. Las comparamos en nuestra guía de alternativas gratis a Photoshop.
 
 ### ¿Estas apps funcionan sin conexión?
 Snapseed y los editores de Fotos funcionan sin internet. Canva y las funciones de IA de otras apps suelen necesitar conexión.
