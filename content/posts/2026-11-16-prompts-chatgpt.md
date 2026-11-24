@@ -1,7 +1,8 @@
 ---
-title: "Cómo escribir buenos prompts para ChatGPT (con ejemplos)"
-description: "Aprende a pedirle cosas a ChatGPT, Claude o Gemini para obtener respuestas mucho mejores: la fórmula de un buen prompt, ejemplos listos para copiar y errores típicos."
+title: "Prompts para ChatGPT: cómo escribirlos bien (con ejemplos para copiar)"
+description: "Prompts para ChatGPT explicados fácil. Aprende a pedirle cosas a ChatGPT, Claude o Gemini para obtener respuestas mucho mejores: la fórmula de un buen prompt, ejemplos listos para copiar y errores típicos."
 date: 2026-11-16
+updated: 2026-11-24
 category: ia
 emoji: 💬
 tags: prompts, chatgpt, inteligencia artificial, claude, gemini
