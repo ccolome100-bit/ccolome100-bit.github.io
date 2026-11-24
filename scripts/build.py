@@ -129,6 +129,7 @@ def head(title, description, path, og_type="website", extra=""):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(full_title)}</title>
 <meta name="description" content="{esc(description)}">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="{BASE}{path}">
 <meta property="og:type" content="{og_type}">
 <meta property="og:title" content="{esc(title)}">
@@ -225,17 +226,76 @@ def write(path: str, content: str):
     f.write_text(content, encoding="utf-8")
 
 
+
+# ───────────────────────── SEO: enlaces internos, FAQ, relacionados ─────────────────────────
+LINKS_FILE = ROOT / "content" / "enlaces.json"
+try:
+    INTERNAL_LINKS = json.loads(LINKS_FILE.read_text(encoding="utf-8")) if LINKS_FILE.exists() else {}
+except Exception:
+    INTERNAL_LINKS = {}
+
+
+def add_internal_links(slug: str, body: str, valid: set) -> str:
+    """Enlaza la primera aparición de cada frase (en párrafos y listas, nunca en títulos ni enlaces)."""
+    for phrase, target in INTERNAL_LINKS.get(slug, []):
+        if target == slug or target not in valid:
+            continue
+        parts = re.split(r"(<[^>]+>)", body)
+        depth = {"a": 0, "h": 0}
+        done = False
+        for i, part in enumerate(parts):
+            if part.startswith("<"):
+                t = re.match(r"</?\s*([a-zA-Z0-9]+)", part)
+                if t:
+                    name = t.group(1).lower()
+                    key = "a" if name == "a" else ("h" if re.fullmatch(r"h[1-6]", name) else None)
+                    if key:
+                        depth[key] += -1 if part.startswith("</") else 1
+                continue
+            if done or depth["a"] or depth["h"] or not part.strip():
+                continue
+            m = re.search(r"(?<!\w)(" + re.escape(phrase) + r")(?!\w)", part, re.I)
+            if m:
+                parts[i] = part[:m.start()] + f'<a href="/{target}/">{m.group(1)}</a>' + part[m.end():]
+                done = True
+        body = "".join(parts)
+    return body
+
+
+def faq_items(html_body: str):
+    m = re.search(r"<h2[^>]*>\s*Preguntas frecuentes\s*</h2>(.*?)(?=<h2|\Z)", html_body, re.S | re.I)
+    if not m:
+        return []
+    items = []
+    for q, a in re.findall(r"<h3[^>]*>(.*?)</h3>(.*?)(?=<h3|\Z)", m.group(1), re.S):
+        qt = html.unescape(re.sub(r"<[^>]+>", "", q)).strip()
+        at = html.unescape(re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", a))).strip()
+        if qt and at:
+            items.append({"@type": "Question", "name": qt, "acceptedAnswer": {"@type": "Answer", "text": at}})
+    return items
+
+
+def related_posts(p, posts, n=3):
+    tags = {t.lower() for t in p["tags"]}
+    scored = []
+    for x in posts:
+        if x["slug"] == p["slug"]:
+            continue
+        score = 2 * len(tags & {t.lower() for t in x["tags"]}) + (1 if x["category"] == p["category"] else 0)
+        scored.append((score, x["date"], x))
+    scored.sort(key=lambda s: (s[0], s[1]), reverse=True)
+    return [s[2] for s in scored[:n]]
+
 # ───────────────────────── Páginas ─────────────────────────
 def build_post(p, posts):
     cat = CATS[p["category"]]
-    related = [x for x in posts if x["category"] == p["category"] and x["slug"] != p["slug"]][:3]
-    if len(related) < 3:
-        related += [x for x in posts if x not in related and x["slug"] != p["slug"]][: 3 - len(related)]
+    related = related_posts(p, posts)
     toc = ""
     if len(p["toc"]) >= 3:
         items = "".join(f'<li><a href="#{t["id"]}">{t["name"]}</a></li>' for t in p["toc"])
         toc = f'<details class="toc" open><summary>En este artículo</summary><ol>{items}</ol></details>'
-    body = amazon_links(inject_in_article_ads(p["html"]))
+    linked = add_internal_links(p["slug"], p["html"], {x["slug"] for x in posts})
+    body = amazon_links(inject_in_article_ads(linked))
     ld = {
         "@context": "https://schema.org", "@type": "Article",
         "headline": p["title"], "description": p["description"],
@@ -243,8 +303,21 @@ def build_post(p, posts):
         "author": {"@type": "Organization", "name": CFG["author"]},
         "publisher": {"@type": "Organization", "name": CFG["site_name"]},
         "mainEntityOfPage": f"{BASE}{p['url']}", "inLanguage": CFG["language"],
+        "image": f"{BASE}/og/{p['slug']}.png",
     }
-    extra = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>'
+    crumbs_ld = {
+        "@context": "https://schema.org", "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Inicio", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": cat["name"], "item": f"{BASE}/categoria/{p['category']}/"},
+            {"@type": "ListItem", "position": 3, "name": p["title"], "item": f"{BASE}{p['url']}"},
+        ],
+    }
+    blocks = [ld, crumbs_ld]
+    faqs = faq_items(p["html"])
+    if faqs:
+        blocks.append({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs})
+    extra = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in blocks)
     rel_html = "".join(card(r) for r in related)
     share_url = f"{BASE}{p['url']}"
     tags = "".join(f'<span class="tag">#{esc(t)}</span>' for t in p["tags"])
