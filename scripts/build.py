@@ -275,13 +275,35 @@ def faq_items(html_body: str):
     return items
 
 
+TAG_FREQ = {}
+_STOP = set("""como cómo para pero porque sobre entre desde hasta tiene tienen puede puedes hacer hace
+cuál cuales cuáles merece pena según mejor mejores gratis guía paso pasos qué este esta estos estas
+también todo todos todas otra otro otras otros sin con más menos muy cada cuando donde dónde
+android iphone móvil móviles 2026""".split())
+
+
+def _words(p):
+    if "_w" not in p:
+        txt = (p["title"] + " " + p["description"] + " " + " ".join(p["tags"])).lower()
+        p["_w"] = {w for w in re.findall(r"[a-záéíóúñü]{4,}", txt) if w not in _STOP}
+    return p["_w"]
+
+
 def related_posts(p, posts, n=3):
+    global TAG_FREQ
+    if not TAG_FREQ:
+        for x in posts:
+            for t in {t.lower() for t in x["tags"]}:
+                TAG_FREQ[t] = TAG_FREQ.get(t, 0) + 1
     tags = {t.lower() for t in p["tags"]}
     scored = []
     for x in posts:
         if x["slug"] == p["slug"]:
             continue
-        score = 2 * len(tags & {t.lower() for t in x["tags"]}) + (1 if x["category"] == p["category"] else 0)
+        shared = tags & {t.lower() for t in x["tags"]}
+        common = _words(p) & _words(x)
+        score = (sum(4 / TAG_FREQ.get(t, 1) for t in shared) + 0.6 * len(common)
+                 + (1 if x["category"] == p["category"] else 0))
         scored.append((score, x["date"], x))
     scored.sort(key=lambda s: (s[0], s[1]), reverse=True)
     return [s[2] for s in scored[:n]]
