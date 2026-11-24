@@ -1,7 +1,8 @@
 ---
-title: "Cómo aprender inteligencia artificial desde cero (sin programar)"
+title: "Cómo aprender inteligencia artificial desde cero (gratis y sin programar)"
 description: "Guía para principiantes: qué aprender primero sobre IA, herramientas gratuitas para practicar, cursos recomendados y un plan de 4 semanas para empezar a usarla de verdad."
 date: 2026-11-18
+updated: 2026-11-24
 category: ia
 emoji: 🧠
 tags: aprender ia, inteligencia artificial, cursos gratis, principiantes
